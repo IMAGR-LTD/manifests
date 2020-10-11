@@ -36,3 +36,8 @@ spec:
     nodeagent:
       env:
         GKE_CLUSTER_URL: "https://container.googleapis.com/v1/projects/project-id/locations/location/clusters/name" # {"$kpt-set":"asm-cluster-url"}
+      tolerations:
+      - effect: NoExecute
+        operator: Exists
+      - effect: NoSchedule
+        operator: Exists
